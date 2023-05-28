@@ -1,5 +1,3 @@
-JS
-
 <script>
 
  const serviceBtns = document.querySelectorAll('.service-btn');
@@ -19,3 +17,5 @@ JS
  });
 
  </script>
+
+
