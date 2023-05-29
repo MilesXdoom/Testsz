@@ -1,7 +1,7 @@
 /* Establecer colores personalizados utilizando variables CSS */
 :root {
   --color-primary: #333;
-  --color-primary-dark: #222;
+  --color-primary-dark: #800080;
   --color-primary-light: #eee;
   --color-accent: #9c27b0;
 }
