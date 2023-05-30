@@ -1,0 +1,225 @@
+/* Establecer colores personalizados utilizando variables CSS */
+:root {
+  --color-primary: #00FF00;
+  --color-primary-dark: #FF0000;
+  --color-primary-light: #eee;
+  --color-accent: #9c27b0;
+}
+
+/* Cambiar los colores personalizados si el esquema de color preferido del usuario es oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #8ab4f8;
+    --color-primary-dark: #e8f0fe;
+    --color-primary-light: #174ea6;
+  }
+}
+
+/* Establecer la fuente y eliminar los márgenes y el relleno predeterminados del cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Establecer un ancho máximo para el contenedor y centrarlo horizontalmente */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Establecer el color y la alineación del texto para los encabezados h1 */
+h1 {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+/* Establecer el color para los encabezados h2 */
+h2 {
+  color: var(--color-primary-dark);
+}
+
+/* Eliminar el estilo de lista y el relleno predeterminados para las listas desordenadas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Agregar un margen inferior a los elementos de la lista */
+li {
+  margin-bottom: 10px;
+}
+
+/* Ocultar los elementos con la clase .service por defecto */
+.service {
+  display: none;
+}
+
+/* Mostrar los elementos con las clases .service y .active */
+.service.active {
+  display: block;
+}
+
+/* Establecer un ancho máximo para las imágenes dentro de los elementos con la clase .service y agregar un margen inferior */
+.service img, img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.service img {
+  display:block;
+  margin-bottom:20px;
+}
+
+/* Establecer la barra de navegación como un contenedor flex y alinear y distribuir sus elementos */
+.navbar {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+/* Establecer la lista de navegación como un contenedor flex y alinear sus elementos a la derecha */
+.nav-links{
+  list-style:none;
+  margin-left:auto;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* Agregar márgenes a los elementos de la lista de navegación */
+.nav-links li{
+  margin-left:20px;
+  margin-right:20px;
+}
+
+/* Eliminar el subrayado y establecer el color y el tamaño de fuente para los enlaces de navegación */
+.nav-links a{
+  text-decoration:none;
+  color:black;
+  font-size:18px;
+}
+
+@media (max-width : 768px){
+.nav-links{
+flex-direction : column ;
+position:absolute;
+top :70px ;
+left :0 ;
+background-color:white ;
+width :100% ;
+text-align:center ;
+display:none; 
+}
+.nav-links li{
+margin-top:10px; 
+margin-bottom:10px; 
+}
+.nav-links a{
+font-size:20px; 
+}
+.navbar{
+flex-wrap:wrap; 
+}
+.toggle{
+display:block; 
+position:absolute; 
+top:10px; 
+right:10px; 
+cursor:pointer; 
+}
+}
+.toggle{
+display:none; 
+}
+@media (max-width: 320px) {
+.container {
+padding:10px; 
+}
+h1 {
+font-size:24px; 
+}
+h2 {
+font-size:18px; 
+}
+}
+@media (min-width: 321px) and (max-width: 480px),
+@media (min-width: 481px) and (max-width: 600px),
+@media (min-width: 601px) and (max-width:800px) {
+.container {
+padding:15px; 
+}
+h1 {
+font-size:28px; 
+}
+h2 {
+font-size:22px; 
+}
+}
+@media (min-width: 801px) and (max-width: 1024px) {
+.container {
+padding:20px; 
+}
+h1 {
+font-size:32px; 
+}
+h2 {
+font-size:26px; 
+}
+}
+@media (min-width: 1025px) {
+.container {
+padding:20px; 
+}
+h1 {
+font-size:36px; 
+}
+h2 {
+font-size:30px; 
+}
+}
+
+/* Agregar márgenes y espacios adecuados para crear un diseño limpio y ordenado */
+.container, .navbar, ul, li, .service img, img, .nav-links li, .nav-links a {
+  margin: 10px;
+}
+
+/* Eliminar elementos innecesarios o demasiado llamativos */
+.toggle {
+  display: none;
+}
+
+/* Ajustar el tamaño de las imágenes y el gif para que se ajusten adecuadamente dentro de sus secciones */
+img, video {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Aplicar una transición suave al pasar el cursor sobre los botones */
+button {
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+}
+
+/* Agregar transiciones suaves y efectos sutiles para mejorar la experiencia visual de la página */
+a, button, input[type="submit"], input[type="reset"] {
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+a:active, button:active, input[type="submit"]:active, input[type="reset"]:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
